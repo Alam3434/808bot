@@ -70,8 +70,8 @@ def run_bot():
             collection.insert_many(final_posts)
     return items
 def send_message(items):
-    if not items:
-        return 
+    # if not items:
+    #     return 
     smtp_server = "smtp.gmail.com"
     smtp_port = 465  # SSL port
     sender_email = "burneralam@gmail.com"
@@ -91,9 +91,9 @@ def send_message(items):
     with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
         server.login(sender_email, password)
         server.send_message(msg)
-total_sleep_time = 5 * 60 * 60
+total_sleep_time = 1 * 60
 while True:
     items = run_bot()
-    send_message(items)
+    send_message("Chikkiii")
     time.sleep(total_sleep_time)
     
